@@ -1,35 +1,26 @@
-import os
-FILE_NAME = "input.txt"
+import aoc
 
 LOSE = 0
 DRAW = 3
 WIN = 6
 
 
-def get_file_path():
-    return os.path.join(os.path.dirname(__file__), FILE_NAME)
-
-
-def print_answer(part_number, answer):
-    print(f"The answer of part {part_number} is: {answer}")
-
-
 def part_one():
     total_score = 0
-    with open(get_file_path()) as f:
+    with open(aoc.get_file_path(__file__)) as f:
         for line in f:
             total_score += rock_paper_scissors(line)
 
-        print_answer(1, total_score)
+        aoc.print_answer(2, 1, total_score)
 
 
 def part_two():
     total_score = 0
-    with open(get_file_path()) as f:
+    with open(aoc.get_file_path(__file__)) as f:
         for line in f:
             total_score += rock_paper_scissors_2(line)
 
-        print_answer(2, total_score)
+        aoc.print_answer(2, 2, total_score)
 
 
 def rock_paper_scissors(input):
@@ -117,11 +108,3 @@ def get_chosen_attribute_score(input):
             score += 3
 
     return score
-
-
-if __name__ == '__main__':
-    print("-- Run part 1 --")
-    part_one()
-
-    print("-- Run part 2 --")
-    part_two()

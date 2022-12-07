@@ -12,13 +12,10 @@ def part_one():
             e2 = get_section_range(elves[1])
 
             if set((e1)).issubset(e2) or set((e2)).issubset(e1):
-                # print(elves)
-                # print_range(e1)
-                # print_range(e2)
 
                 counter += 1
 
-    aoc.print_answer(1, counter)
+    aoc.print_answer(4, 1, counter)
 
 
 def part_two():
@@ -34,7 +31,7 @@ def part_two():
             if set(e1).intersection(set(e2)):
                 counter += 1
 
-    aoc.print_answer(2, counter)
+    aoc.print_answer(4, 2, counter)
 
 
 def get_section_range(input):

@@ -6,7 +6,8 @@ def part_one():
         for line in f:
             line = line.rstrip()
 
-    aoc.print_answer(1, "")
+        marker_position = find_marker(line, 4)
+        aoc.print_answer(6, 1, marker_position)
 
 
 def part_two():
@@ -14,4 +15,11 @@ def part_two():
         for line in f:
             line = line.rstrip()
 
-    aoc.print_answer(2, "")
+        marker_position = find_marker(line, 14)
+        aoc.print_answer(6, 2, marker_position)
+
+
+def find_marker(message, length):
+    for i in range(0, len(message)-length):
+        if (len(set(message[i:i+length])) == length):
+            return i+length

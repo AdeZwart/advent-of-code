@@ -12,7 +12,7 @@ def part_one():
             common_item = list(set(compartments[0]) & set(compartments[1]))[0]
             priority_sum += calculate_priority(common_item)
 
-        aoc.print_answer(1, priority_sum)
+        aoc.print_answer(3, 1, priority_sum)
 
 
 def part_two():
@@ -28,7 +28,7 @@ def part_two():
 
             priority_sum += calculate_priority(common_item)
 
-    aoc.print_answer(2, priority_sum)
+    aoc.print_answer(3, 2, priority_sum)
 
 
 def calculate_priority(input):

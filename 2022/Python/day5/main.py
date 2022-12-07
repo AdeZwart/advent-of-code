@@ -15,7 +15,7 @@ def part_one():
 
         message = get_message(cargo)
 
-    aoc.print_answer(1, message)
+    aoc.print_answer(5, 1, message)
 
 
 def part_two():
@@ -31,7 +31,7 @@ def part_two():
 
         message = get_message(cargo)
 
-    aoc.print_answer(2, message)
+    aoc.print_answer(5, 2, message)
 
 
 def get_cargo():
