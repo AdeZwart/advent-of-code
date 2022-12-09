@@ -12,4 +12,4 @@ Solutions are in C#
 
 [2022](https://github.com/AdeZwart/advent-of-code/tree/main/2022/Python)  
 Solutions are in Python  
-12 :star:
+16 :star:
