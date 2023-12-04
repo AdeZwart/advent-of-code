@@ -62,64 +62,6 @@
             return t;
         }
 
-        public object ExecutePart2DumbWay()
-        {
-            //var testInput = new[] {
-            //    "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53",
-            //    "Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19",
-            //    "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1",
-            //    "Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83",
-            //    "Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36",
-            //    "Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11"
-            //    };
-
-            //Input = testInput;
-
-            var playedScratchCards = new List<ScratchCard>();
-
-            // Collect all scratch cards
-            var scratchCards = new Queue<ScratchCard>();
-            foreach (var index in Enumerable.Range(0, Input.Length))
-            {
-                var scratchCard = GetScratchCard(Input[index]);
-
-                // Play the card
-                var matchingNumbers = scratchCard.WinningNumbers.Intersect(scratchCard.CardNumbers);
-
-                // Add newly won cards to the scratch card
-                foreach (var i in Enumerable.Range(1, matchingNumbers.Count()))
-                {
-                    var newScratchCard = GetScratchCard(Input[(scratchCard.ID + i) - 1]);
-                    scratchCards.Enqueue(newScratchCard);
-                }
-
-                scratchCards.Enqueue(scratchCard);
-            }
-
-            Console.WriteLine($"Scratch card count: {scratchCards.Count}");
-
-            // Play every scratchcard on the queue
-            while (scratchCards.Count > 0)
-            {
-                var scratchCard = scratchCards.Dequeue();
-
-                var matchingNumbers = scratchCard.WinningNumbers.Intersect(scratchCard.CardNumbers);
-                Console.WriteLine($"Won {matchingNumbers.Count()} new scratch cards");
-
-                // Add newly won cards to the queue
-                foreach (var i in Enumerable.Range(1, matchingNumbers.Count()))
-                {
-                    var newScratchCard = GetScratchCard(Input[(scratchCard.ID + i) - 1]);
-                    scratchCards.Enqueue(newScratchCard);
-                }
-
-                playedScratchCards.Add(scratchCard);
-                Console.WriteLine($"Scratch cards played: {playedScratchCards.Count}");
-            }
-
-            return playedScratchCards.Count;
-        }
-
         private void PrintCards(Dictionary<int, long> cardDict)
         {
             foreach (var card in cardDict)
