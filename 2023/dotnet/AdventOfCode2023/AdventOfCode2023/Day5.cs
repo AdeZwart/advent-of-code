@@ -34,7 +34,7 @@ namespace AzW.AdventOfCode.Year2023
 
             var seedStarts = new List<long>();
             var seedEnds = new List<long>();
-
+            
             for (var i = 0; i < seeds.Count; i += 2)
             {
                 seedStarts.Add(seeds[i]);
@@ -44,6 +44,13 @@ namespace AzW.AdventOfCode.Year2023
             (var seed2soilMap, var soil2fertilizerMap, var fertilizer2waterMap, var water2lightMap, var light2temperatureMap, var temperature2humidityMap, var humidity2locationMap) = GetPlantingMaps();
 
             // Foreach SeedRange, see if it has any intersection in a seed2soilMap Range
+            foreach(var s in Enumerable.Range(0, seedStarts.Count))
+            {
+                foreach(var r in Enumerable.Range(0, seed2soilMap.Sources.Count))
+                {
+
+                }
+            }
 
             var lowestLocationNumber = GetLowestLocationNumber(seeds);
 
