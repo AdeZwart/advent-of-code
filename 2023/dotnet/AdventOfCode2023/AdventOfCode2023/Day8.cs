@@ -45,6 +45,46 @@
             return stepsToTheEnd;
         }
 
+        public long GetStepsToEndForElement(Queue<char> directionInstructions, IOrderedEnumerable<Element> elements)
+        {
+            long stepsToTheEnd = 0;
+
+            //var directionInstructions = new Queue<char>(Input[0]);
+            //var elements = ParseElements().OrderBy(e => e.ID);
+
+            var currentElement = elements.First(e => e.ID == "AAA");
+            var nextElement = string.Empty;
+
+            while (directionInstructions.Count > 0)
+            {
+                // Get the first instruction from the queue
+                var instruction = directionInstructions.Dequeue();
+
+                nextElement = instruction switch
+                {
+                    LEFT => currentElement.Left,
+                    RIGHT => currentElement.Right,
+                    _ => throw new NotImplementedException(),
+                };
+
+                stepsToTheEnd++;
+
+                // Add the instruction back to the end of the queue
+                directionInstructions.Enqueue(instruction);
+
+                // We've found the end
+                if (nextElement == "ZZZ")
+                {
+                    break;
+                }
+
+                // Move to next element
+                currentElement = elements.First(e => e.ID == nextElement);
+            }
+
+            return stepsToTheEnd;
+        }
+
         public override object ExecutePart2()
         {
             //Input = GetTestInput();
@@ -137,6 +177,7 @@
             public required string ID { get; init; }
             public required string Left { get; init; }
             public required string Right { get; init; }
+            public long StepsToEnd { get; set; }
         }
     }
 }
