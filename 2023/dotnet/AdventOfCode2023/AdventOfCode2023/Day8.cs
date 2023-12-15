@@ -172,7 +172,7 @@
             return elements;
         }
 
-        private sealed record Element()
+        public sealed record Element()
         {
             public required string ID { get; init; }
             public required string Left { get; init; }
