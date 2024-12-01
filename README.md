@@ -14,6 +14,10 @@ Solutions are in C#
 Solutions are in Python
 24 :star:
 
-[2023](Https://github.com/AdeZwart/advent-of-code/tree/main/2023/dotnet)
+[2023](https://github.com/AdeZwart/advent-of-code/tree/main/2023/dotnet)
 Solutions are in C#
 19 :star:
+
+[2024](https://github.com/AdeZwart/advent-of-code/tree/main/2024/dotnet)
+Solutions are in C#
+2 :star:
