@@ -9,16 +9,18 @@ namespace AdventOfCode2024.UnitTests
 
         public Day1Tests()
         {
-            _day1 = new Day1();
-            _day1.Input =
-            [
-                "3   4",
-                "4   3",
-                "2   5",
-                "1   3",
-                "3   9",
-                "3   3"
-            ];
+            _day1 = new Day1
+            {
+                Input =
+                [
+                    "3   4",
+                    "4   3",
+                    "2   5",
+                    "1   3",
+                    "3   9",
+                    "3   3"
+                ]
+            };
         }
 
         [Theory]

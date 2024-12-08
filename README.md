@@ -20,4 +20,4 @@ Solutions are in C#
 
 [2024](https://github.com/AdeZwart/advent-of-code/tree/main/2024/dotnet)
 Solutions are in C#
-2 :star:
+3 :star:
