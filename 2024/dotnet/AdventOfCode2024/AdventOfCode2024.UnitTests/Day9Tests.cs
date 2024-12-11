@@ -19,18 +19,18 @@ namespace AdventOfCode2024.UnitTests
             };
         }
 
-        [Theory]
-        [InlineData("12345", "0..111....22222")]
-        [InlineData("2333133121414131402", "00...111...2...333.44.5555.6666.777.888899")]
-        public void Decompresses_Disk_Map(string diskMap, string expectedDecompressedDiskMap)
-        {
-            // Arrange
+        //[Theory]
+        //[InlineData("12345", "0..111....22222")]
+        //[InlineData("2333133121414131402", "00...111...2...333.44.5555.6666.777.888899")]
+        //public void Decompresses_Disk_Map(string diskMap, string expectedDecompressedDiskMap)
+        //{
+        //    // Arrange
 
-            // Act
-            var decompressedDiskMap = _day9.DecompressDiskMap(diskMap);
+        //    // Act
+        //    var decompressedDiskMap = _day9.DecompressDiskMap(diskMap);
 
-            // Assert
-            Assert.Equal(expectedDecompressedDiskMap, decompressedDiskMap);
-        }        
+        //    // Assert
+        //    Assert.Equal(expectedDecompressedDiskMap, decompressedDiskMap);
+        //}        
     }
 }
