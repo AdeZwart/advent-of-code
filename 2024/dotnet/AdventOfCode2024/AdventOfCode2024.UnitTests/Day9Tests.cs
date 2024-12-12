@@ -1,9 +1,4 @@
 ﻿using AzW.AdventOfCode.Year2024;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2024.UnitTests
 {
@@ -19,18 +14,45 @@ namespace AdventOfCode2024.UnitTests
             };
         }
 
-        //[Theory]
-        //[InlineData("12345", "0..111....22222")]
-        //[InlineData("2333133121414131402", "00...111...2...333.44.5555.6666.777.888899")]
-        //public void Decompresses_Disk_Map(string diskMap, string expectedDecompressedDiskMap)
-        //{
-        //    // Arrange
+        [Theory]
+        [InlineData("12345", "0..111....22222")]
+        [InlineData("2333133121414131402", "00...111...2...333.44.5555.6666.777.888899")]
+        public void Decompresses_Disk_Map(string diskMap, string expectedDecompressedDiskMap)
+        {
+            // Arrange
 
-        //    // Act
-        //    var decompressedDiskMap = _day9.DecompressDiskMap(diskMap);
+            // Act
+            var decompressedDiskMap = _day9.DecompressDiskMap(diskMap);
 
-        //    // Assert
-        //    Assert.Equal(expectedDecompressedDiskMap, decompressedDiskMap);
-        //}        
+            // Assert
+            Assert.Equal(expectedDecompressedDiskMap, decompressedDiskMap);
+        }
+
+        [Theory]
+        [InlineData("0..111....22222", "022111222......")]
+        [InlineData("00...111...2...333.44.5555.6666.777.888899", "0099811188827773336446555566..............")]
+        public void Should_Defrag_Disk(string diskMap, string expectedDefragmentedDiskMap)
+        {
+            // Arrange
+
+            // Act
+            var defragmentedDiskMap = _day9.DefragmentDisk(diskMap);
+
+            // Assert
+            Assert.Equal(expectedDefragmentedDiskMap, defragmentedDiskMap);
+        }
+
+        [Theory]
+        [InlineData("0099811188827773336446555566..............", 1928)]
+        public void Should_Calculate_Filesystem_Checksum(string diskMap, long expectedChecksum)
+        {
+            // Arrange
+
+            // Act
+            var checksum = _day9.CalculateChecksum(diskMap);
+
+            // Assert
+            Assert.Equal(expectedChecksum, checksum);
+        }
     }
 }
